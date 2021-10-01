@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/vap999793/Ecomm/issues"
   },
-  "homepage": "https://github.com/vap999793/Ecomm#readme"
+  "homepage": "https://github.com/vap999793/Ecomm#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "mongoose": "^6.0.8",
+    "morgan": "^1.10.0"
+  }
 }
