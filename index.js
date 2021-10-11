@@ -1,31 +1,6 @@
-const express = require('express');
-require('./database/db')();
-const morgan = require('morgan');
-const { userRouter } = require('./routers/user-router');
-const { productRouter } = require('./routers/product-router');
-const { categoryRouter } = require('./routers/category-router');
-const { orderRouter } = require('./routers/order-router');
+require('dotenv').config();
+const {app} = require('./server');
 
-const app = express();
-
-app.use(express.json());
-app.use(morgan('dev'));
-
-app.listen(3000, ()=>{
-    console.log(`Server is running at PORT : 3000`);
+app.listen(process.env.PORT || 2000, ()=>{
+    console.log(`Server is running at PORT : ${process.env.PORT}`);
 })
-
-app.get('/', (req, res)=>{
-    res.send("API running")
-})
-
-APIRouter = express.Router();
-APIRouter.get('', (req, res)=>{
-    res.json({"Message" : "API is running"});
-})
-
-app.use('/api', APIRouter);
-APIRouter.use('/users', userRouter);
-APIRouter.use('/products', productRouter);
-APIRouter.use('/categories', categoryRouter);
-APIRouter.use('/orders', orderRouter);

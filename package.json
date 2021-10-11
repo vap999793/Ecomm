@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/vap999793/Ecomm#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "password-hash": "^1.2.2"
   }
 }
