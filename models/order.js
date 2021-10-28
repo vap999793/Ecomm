@@ -10,7 +10,7 @@ const OrderSchema = new Schema({
     address : {type:String, required:true},
     quantity : {type:Number, required:true},
     payment_method : {type:String, required:true, default:"COD"},
-    status : {type:Boolean, required:true}
+    status : {type:Boolean, required:true, default:false}
 }, 
     {timestamps : 
         {

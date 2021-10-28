@@ -1,4 +1,5 @@
 const { Category } = require('../models/category');
+const { Product } = require('../models/product');
 const Joi = require('joi');
 
 async function getCategories(req, res) {
@@ -31,4 +32,13 @@ async function createCategory(req, res, next) {
     return next(new Error(categoryValidation.error.details[0].message));
 }
 
-module.exports = { getCategories, createCategory, getCategory };
+
+async function getProductsByCategory(request, response, next) {
+    const products = await Product.find({
+        category: request.params.categoryId,
+    }).populate("category");
+    response.json({ products });
+}
+
+
+module.exports = { getCategories, createCategory, getCategory, getProductsByCategory };

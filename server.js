@@ -1,7 +1,12 @@
 const express = require('express');
+const { handleError } = require('./middlewares/error-handler');
+require('express-async-errors');
 const morgan = require('morgan');
 const { userRouter, categoryRouter, productRouter, orderRouter } = require('./routers/routers');
-const { handleError } = require('./middlewares/error-handler');
+
+
+// throw new Error()
+// Promise.reject(new Error());
 
 const app = express();
 
